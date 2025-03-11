@@ -76,7 +76,23 @@ public class ArbolBB <T extends Comparable <T>>{
         postOrden(act.getIzq(), lista);
         postOrden(act.getDer(), lista);
         lista.add(act.getElem());
-    }    
+    }   
+    public void inOrden(){
+        ArrayList<T> datos = new ArrayList<>();
+        inOrden(raiz, datos);
+        for(T es: datos){
+            System.out.println(es);
+        }       
+    }
+    private void inOrden(NodoBB<T> act, ArrayList<T> lista){
+        if(act==null){
+            return;
+        }
+        postOrden(act.getIzq(), lista);
+        lista.add(act.getElem());
+        postOrden(act.getDer(), lista);
+    }
+    
     public int calculaAltura(){
         return calculaAltura(raiz, 0);
     }
