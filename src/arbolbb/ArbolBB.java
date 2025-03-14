@@ -88,9 +88,9 @@ public class ArbolBB <T extends Comparable <T>>{
         if(act==null){
             return;
         }
-        postOrden(act.getIzq(), lista);
+        inOrden(act.getIzq(), lista);
         lista.add(act.getElem());
-        postOrden(act.getDer(), lista);
+        inOrden(act.getDer(), lista);
     }
     
     public int calculaAltura(){
